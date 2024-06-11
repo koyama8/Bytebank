@@ -7,9 +7,15 @@ qualquer = 22;
 //Arrays
 const lista = [];
 lista.push(13, 22.5, 22, 89, 1.58);
-//Tipos Personalizados (Type Alias)
+//Enum
+var TipoTransacao;
+(function (TipoTransacao) {
+    TipoTransacao["DEPOSITO"] = "Dep\u00F3sito";
+    TipoTransacao["TRANSFERENCIA"] = "Transf\u00EAncia";
+    TipoTransacao["PAGAMENTO_BOLETO"] = "Pagamento de Boleto";
+})(TipoTransacao || (TipoTransacao = {}));
 const novaTransacao = {
-    tipoTransacao: "",
+    tipoTransacao: TipoTransacao.PAGAMENTO_BOLETO,
     data: new Date(),
     valor: 0
 };
